@@ -13,5 +13,16 @@
     "vuejs"
   ],
   "author": "Marco",
-  "license": "WTFPL"
+  "license": "WTFPL",
+  "dependencies": {
+    "vue": "^1.0.26-csp"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "stylus": "^0.54.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marcong95/marco-frontier.git"
+  }
 }
