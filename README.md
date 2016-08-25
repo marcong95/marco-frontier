@@ -2,7 +2,7 @@
 
 ## Intro
 
-**marco-frontier** is a blog system of Marco, by Marco, for Marco. That is a project to realize any idea of a newbie front-end programmer called *Marco*
+**marco-frontier** is a blog system of Marco, by Marco, for Marco. That is a project to realize any idea of a newbie front-end programmer called *Marco*.
 
 ## Project Structure
 
