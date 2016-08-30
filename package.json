@@ -4,6 +4,8 @@
   "description": "A blog system of Marco, by Marco, for Marco.",
   "main": "index.js",
   "scripts": {
+    "dev": "webpack-dev-server --inline --hot",
+    "build": "webpack -p",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -15,11 +17,24 @@
   "author": "Marco",
   "license": "WTFPL",
   "dependencies": {
+    "purecss": "^0.6.0",
     "vue": "^1.0.26-csp"
   },
   "devDependencies": {
+    "babel-core": "^6.14.0",
+    "babel-loader": "^6.2.5",
+    "babel-plugin-transform-runtime": "^6.12.0",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-runtime": "^6.11.6",
+    "css-loader": "^0.24.0",
     "gulp": "^3.9.1",
-    "stylus": "^0.54.5"
+    "stylus": "^0.54.5",
+    "vue-hot-reload-api": "^1.3.3",
+    "vue-html-loader": "^1.2.3",
+    "vue-loader": "^8.5.2",
+    "vue-style-loader": "^1.0.0",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.15.0"
   },
   "repository": {
     "type": "git",
