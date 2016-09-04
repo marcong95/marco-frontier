@@ -11,5 +11,8 @@ module.exports = {
       { test: /\.js$/, loader: 'babel' },
       { test: /\.vue$/, loader: 'vue' }
     ]
+  },
+  externals: {
+    vue: "Vue"
   }
 }
