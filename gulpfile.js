@@ -9,6 +9,10 @@ gulp.task('default', function() {
     .pipe(gulp.dest('dist/'))
 })
 
+gulp.task('dev', function() {
+  
+})
+
 gulp.task('clean', function() {
   return del([
     'dist/*'
