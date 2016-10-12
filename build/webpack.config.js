@@ -25,9 +25,9 @@ module.exports = {
   ],
   resolve: {
     alias: {
-      // alias to vue maybe not necessary
+      // alias to vue may not be necessary
       // see https://vuejs.org/guide/installation.html#Standalone-vs-Runtime-only-Build
-      vue: 'vue/dist/vue.js'
+      // vue: 'vue/dist/vue.js'
     }
   }
 }
