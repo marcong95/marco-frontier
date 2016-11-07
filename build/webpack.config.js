@@ -1,5 +1,6 @@
 var path = require('path')
 var webpack = require('webpack')
+var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
   entry: {
@@ -14,6 +15,10 @@ module.exports = {
   module: {
     loaders: [
       { test: /\.js$/, loader: 'babel', exclude: /node_modules/ },
+      { test: /\.css$/, 
+        loader: ExtractTextPlugin.extract("style-loader", "css-loader")},
+      { test: /\.styl$/,
+        loader: 'style-loader!css-loader!stylus-loader'},
       { test: /\.vue$/, loader: 'vue' }
     ]
   },
@@ -21,13 +26,7 @@ module.exports = {
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
       filename: 'vendor.js'
-    })
-  ],
-  resolve: {
-    alias: {
-      // alias to vue may not be necessary
-      // see https://vuejs.org/guide/installation.html#Standalone-vs-Runtime-only-Build
-      // vue: 'vue/dist/vue.js'
-    }
-  }
+    }),
+    new ExtractTextPlugin('style.css')
+  ]
 }
