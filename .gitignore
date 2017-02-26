@@ -1,4 +1,8 @@
 node_modules/
 dist/
+
+# config files of tools
+
 jsconfig.json
 .vscode/
+yarn.lock

@@ -1,0 +1,4 @@
+\i trigfunc.sql
+\i user.sql
+\i post.sql
+\i comment.sql
