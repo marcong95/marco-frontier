@@ -18,9 +18,11 @@ module.exports = {
         loader: 'babel',
         exclude: /node_modules/,
         query: {
-          "presets": ["env", {
-            "targets": {"browsers": "> 1%"}
-          }]
+          "presets": [
+            ["env", {
+              "targets": {"browsers": "> 1%"}
+            }]
+          ]
         }
       },
       { test: /\.css$/, 
