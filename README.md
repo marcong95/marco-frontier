@@ -8,14 +8,8 @@
 
 - vue.js
 - stylus
-- gulp
 - npm
 - ...
-
-## Directory Structure
-```
-
-```
 
 ## License
 

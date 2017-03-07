@@ -5,7 +5,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin')
 module.exports = {
   entry: {
     main: './src/app.js',
-    vendor: ['vue', 'vue-router']
+    vendor: ['vue', 'vue-router', 'vuex']
   },
   output: {
     path: path.join(__dirname, '../dist'),
@@ -14,8 +14,9 @@ module.exports = {
   },
   module: {
     loaders: [
+      { test: /\.vue$/, loader: 'vue-loader' },
       { test: /\.js$/,
-        loader: 'babel',
+        loader: 'babel-loader',
         exclude: /node_modules/,
         query: {
           "presets": [
@@ -26,10 +27,9 @@ module.exports = {
         }
       },
       { test: /\.css$/, 
-        loader: ExtractTextPlugin.extract("style-loader", "css-loader")},
+        loader: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader' })},
       { test: /\.styl$/,
-        loader: 'style-loader!css-loader!stylus-loader'},
-      { test: /\.vue$/, loader: 'vue' }
+        loader: 'style-loader!css-loader!stylus-loader'}
     ]
   },
   plugins: [
@@ -38,5 +38,6 @@ module.exports = {
       filename: 'vendor.js'
     }),
     new ExtractTextPlugin('style.css')
-  ]
+  ],
+  devtool: 'source-map'
 }
