@@ -1,33 +1,31 @@
 <template>
-  <nav>
-    <div class="site-name">
-      <mf-logo></mf-logo>
-      <span>Marco's Frontier of Self-Struggling</span>
-    </div>
-    <ul class="main-nav">
-      <li>Home</li>
-      <li>Blog</li>
-      <li>Project</li>
-      <li>Contact</li>
-    </ul>
-  </nav>
+  <header>
+    <h1>marco-frontier</h1>
+    <nav>
+      <ul class="nav-main">
+        <li>Home</li>
+        <li>Blog</li>
+        <li>Project</li>
+        <li>Contact</li>
+      </ul>
+    </nav>
+  </header>
 </template>
 
-<script>
-  import Logo from './logo.vue'
-
-  export default {
-    components: {
-      'mf-logo': Logo
-    }
-  }
-</script>
-
 <style lang="stylus">
-  .main-nav
+  nav ul
+    display flex
+    justify-content space-between
     margin 0
     padding 0
 
     li
+      width 8em
+      text-align center
+      text-transform lowercase
       list-style none
+
+  .site-name
+    font-size 48px
+    
 </style>
