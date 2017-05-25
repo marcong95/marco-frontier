@@ -13,23 +13,23 @@ module.exports = {
     filename: 'bundle.js'
   },
   module: {
-    loaders: [
+    rules: [
       { test: /\.vue$/, loader: 'vue-loader' },
       { test: /\.js$/,
         loader: 'babel-loader',
-        exclude: /node_modules/,
-        query: {
+        exclude: [
+          path.resolve(__dirname, '../node_modules')
+        ],
+        options: {
           "presets": [
-            ["env", {
-              "targets": {"browsers": "> 1%"}
-            }]
+            ["env", {"targets": {"browsers": "> 1%"}}]
           ]
         }
       },
       { test: /\.css$/, 
         loader: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader' })},
       { test: /\.styl$/,
-        loader: 'style-loader!css-loader!stylus-loader'}
+        use: ['style-loader', 'css-loader', 'stylus-loader']}
     ]
   },
   plugins: [
