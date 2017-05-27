@@ -1,6 +1,6 @@
-var path = require('path')
-var webpack = require('webpack')
-var ExtractTextPlugin = require('extract-text-webpack-plugin')
+const path = require('path')
+const webpack = require('webpack')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
   entry: {
@@ -38,6 +38,5 @@ module.exports = {
       filename: 'vendor.js'
     }),
     new ExtractTextPlugin('style.css')
-  ],
-  devtool: 'cheap-module-eval-source-map'
+  ]
 }
