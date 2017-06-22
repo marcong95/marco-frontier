@@ -19,8 +19,8 @@ CREATE TABLE public."user" (
   bio text COLLATE pg_catalog."default",
   created timestamp with time zone NOT NULL DEFAULT now(),
   modified timestamp with time zone NOT NULL DEFAULT now(),
-  banned boolean NOT NULL DEFAULT false,
-)
+  banned boolean NOT NULL DEFAULT false
+);
 
 -- Trigger: user_update_modified_trigger
 

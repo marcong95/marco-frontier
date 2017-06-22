@@ -1,5 +1,5 @@
 DROP TABLE IF EXISTS public.post CASCADE;
-DROP SEQUENCE IF EXISTS post_id_seq;
+DROP SEQUENCE IF EXISTS post_id_seq CASCADE;
 
 -- Sequences
 
