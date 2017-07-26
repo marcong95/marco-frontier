@@ -1,6 +1,6 @@
 {
   "name": "marco-frontier",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "A blog system of Marco, by Marco, for Marco.",
   "main": "index.js",
   "scripts": {
