@@ -6,7 +6,7 @@
 <style lang="stylus">
   fgcolor = #1d3d56
   bgcolor = transparent
-  
+
   // .mf-logo
   //   display inline-block
   //   box-sizing border-box
@@ -16,7 +16,7 @@
   //   font-size 200px
   //   border dashed 1px red
   //   background bgcolor
-  
+
 </style>
 
 <script>
