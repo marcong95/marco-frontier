@@ -14,45 +14,22 @@ module.exports = {
   },
   module: {
     rules: [
-      {
-        test: /\.vue$/,
-        loader: 'vue-loader',
-        options: {
-          css: ExtractTextPlugin.extract({
-            fallback: 'vue-style-loader',
-            use: 'css-loader'
-          }),
-          stylus: ExtractTextPlugin.extract({
-            fallback: 'vue-style-loader',
-            use: ['css-loader', 'stylus-loader']
-          })
-        }
-      }, {
-        test: /\.js$/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            "presets": [
-              ["env", {"targets": {"browsers": "> 1%"}}]
-            ]
-          }
-        },
+      { test: /\.vue$/, loader: 'vue-loader' },
+      { test: /\.js$/,
+        loader: 'babel-loader',
         exclude: [
           path.resolve(__dirname, '../node_modules')
-        ]
-      }, {
-        test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: 'css-loader'
-        })
-      }, {
-        test: /\.styl$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'vue-style-loader',
-          use: ['css-loader', 'stylus-loader']
-        })
-      }
+        ],
+        options: {
+          "presets": [
+            ["env", {"targets": {"browsers": "> 1%"}}]
+          ]
+        }
+      },
+      { test: /\.css$/, 
+        loader: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader' })},
+      { test: /\.styl$/,
+        use: ['style-loader', 'css-loader', 'stylus-loader']}
     ]
   },
   plugins: [
