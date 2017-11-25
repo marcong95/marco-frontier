@@ -44,18 +44,15 @@ export default {
   },
 
   mounted() {
-    // this.$http.post('https://api.github.com/graphql',
-    //   { query: query.trim() },
-    //   {
-    //     headers: {
-    //       'Authorization': 'bearer 144622adf391f2649e2e85c4e638a7090ff23fd8',
-    //       'Content-Type': 'application/json'
-    //     },
-    //   }
-    // )
-    Promise.resolve({
-      data: JSON.parse(String.raw`{"data":{"repository":{"name":"marco-frontier","refs":{"nodes":[{"name":"heads/dev","target":{"id":"MDY6Q29tbWl0NjY1NjgwMjc6ZTk5NDI3MjVmYThmYzgwMzVlMjExMGNjYTNiMmM0ZTY0ZGMwMWMxNA==","message":"add a link to MIIT website on the ICP filing no.","committedDate":"2017-11-02T08:18:38Z"}},{"name":"heads/master","target":{"id":"MDY6Q29tbWl0NjY1NjgwMjc6NTg3ZTEzMDFjZjQyMjJlN2UxMWMyZDgxNzA1ZDAyMTAwYzMwYzI1Yw==","message":"Revert \"use extract-text-webpack-plugin properly\"\n\nThis reverts commit 23604ccf56671a9292e02dce1807732639a8aaf3.","committedDate":"2017-10-15T15:48:53Z"}},{"name":"tags/v0.1.0","target":{"id":"MDY6Q29tbWl0NjY1NjgwMjc6YThiNWNiNDU3ODE4ODA1YjY3MDhhOGMxMjQ2MmEwNDkwODhlY2NkMw==","message":"modify README.md and package.json\nthat (pretends to) release 0.1.0 which\nactually is just anothing daily useless commit","committedDate":"2017-07-26T02:35:19Z"}}]}}}}`)
-    })
+    this.$http.post('https://api.github.com/graphql',
+      { query: query.trim() },
+      {
+        headers: {
+          'Authorization': 'bearer 144622adf391f2649e2e85c4e638a7090ff23fd8',
+          'Content-Type': 'application/json'
+        },
+      }
+    )
     .then(res => {
       const refNodes = res.data.data.repository.refs.nodes
       const dates = refNodes
@@ -68,7 +65,6 @@ export default {
       for (let lang in this.time) {
         latest.locale(lang)
         this.time[lang] = latest.toNow(true)
-        console.log(lang, this.time[lang])
       }
     })
     .catch(err => {
